@@ -1,27 +1,24 @@
-
 const InputField = ({
     label,
     type,
     name,
-    id,
     ...props
-}) => {
-    return(
-        <div className="form-group mt-2">
-            <label htmlFor={id}>
-                {label}
-            </label>
-            
-            <input type={type}
-            className="form-control"
-            required
-            autoComplete="off"
-            id={id}
-            name={name}
-            {...props}></input>
-
-        </div>
-    )
-}
-
-export default InputField;
+  }) => {
+    return (
+      <div className="form-group mt-2">
+        <label htmlFor={name}>{label}</label>
+        <input
+          type={type}
+          className="form-control"
+          required
+          autoComplete="off"
+          id={name}         // ✅ make id = name for simplicity
+          name={name}
+          {...props}
+        />
+      </div>
+    );
+  };
+  
+  export default InputField;
+  
